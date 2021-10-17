@@ -6,8 +6,6 @@ public @interface Icon {
 
     int height();
 
-    String[] path();
-
-    String color() default "white";
+    Path[] path();
 
 }
