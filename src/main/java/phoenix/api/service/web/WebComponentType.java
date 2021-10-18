@@ -1,4 +1,4 @@
-package phoenix.api.web;
+package phoenix.api.service.web;
 
 public enum WebComponentType {
 

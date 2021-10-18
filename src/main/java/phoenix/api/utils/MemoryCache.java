@@ -22,11 +22,16 @@ public class MemoryCache {
     public static <T> T get(String key, Supplier<T> supplier, long time, TimeUnit timeUnit) {
         if(cache.containsKey(key)) return (T) cache.get(key);
 
-        T value = supplier.get();
-        cache.put(key, value);
+        try {
+            T value = supplier.get();
+            cache.put(key, value);
 
-        scheduler.schedule(() -> cache.remove(key), time, timeUnit);
-        return value;
+            scheduler.schedule(() -> cache.remove(key), time, timeUnit);
+            return value;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 
     public static <T> T get(String key, Supplier<T> supplier, int minutes) {

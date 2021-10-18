@@ -13,6 +13,8 @@ public interface Phoenix {
 
     File getPluginDirectory();
 
+    String getWebsiteURL();
+
     Phoenix installModule(String... module);
 
     Phoenix copyResource(String classPathSource, Path to);
