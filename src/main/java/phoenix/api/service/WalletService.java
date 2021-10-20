@@ -43,6 +43,12 @@ public interface WalletService {
 
         private float change = 0;
         private String message = "";
+        private int delayMs = 0;
+
+        public WalletTransactionBuilder delay(int ms) {
+            this.delayMs = ms;
+            return this;
+        }
 
         public WalletTransactionBuilder change(float change) {
             this.change = change;
@@ -68,6 +74,10 @@ public interface WalletService {
 
         public String getMessage() {
             return message;
+        }
+
+        public int getDelay() {
+            return delayMs;
         }
 
     }
