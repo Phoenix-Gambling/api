@@ -50,7 +50,7 @@ public interface Node {
         private final String defaultValue;
         private final String description;
 
-        Parameter(String key, String defaultValue, String description) {
+        public Parameter(String key, String defaultValue, String description) {
             this.key = key;
             this.defaultValue = defaultValue;
             this.description = description;

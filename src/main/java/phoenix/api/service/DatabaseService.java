@@ -33,6 +33,10 @@ public interface DatabaseService {
 
     }
 
+    default DocumentBuilder document() {
+        return new DocumentBuilder();
+    }
+
     class Collection {
 
         private final MongoCollection<Document> document;

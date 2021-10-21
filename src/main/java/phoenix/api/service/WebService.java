@@ -49,6 +49,12 @@ public class WebService {
             return this;
         }
 
+        public Inject forEveryoneExcept(String... roles) {
+            this.targetUserGroup = "rolesExcept";
+            this.targetUserRoles = roles;
+            return this;
+        }
+
         public String getHtml() {
             return html;
         }
