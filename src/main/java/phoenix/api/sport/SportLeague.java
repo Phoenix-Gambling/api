@@ -4,7 +4,7 @@ import com.google.gson.JsonObject;
 
 public interface SportLeague {
 
-    int id();
+    String id();
 
     String name();
 
